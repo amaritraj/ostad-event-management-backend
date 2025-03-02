@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BookingController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -38,4 +39,4 @@ Route::delete('/delete-user/{id}', [UserController::class, 'deleteUser']);
  */
 
 // get all bookings:
-//Route::get('/bookings', [BookingsController::class, 'getAllbookings']);
+Route::get('/bookings', [BookingController::class, 'getAllbookings']);
