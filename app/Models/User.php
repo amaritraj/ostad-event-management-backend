@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Model
 {
+    protected $fillable = ['role', 'name', 'email', 'password'];
+
     //one user many to Booking relationsheep
     public function bookings(): HasMany
     {
