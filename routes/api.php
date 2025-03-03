@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -8,6 +9,8 @@ use App\Http\Controllers\BookingController;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
+Route::post('/member_registration', [AuthController::class, 'memberRegistration']);
 
 Route::get('/healthcheck', function () {
     return response()->json(['message' => 'API is Working!']);
